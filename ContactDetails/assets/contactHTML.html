@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Details</title>
+</head>
+
+<body>
+	<p style="color:brown; font-weight: bold; font-size: 20px; text-decoration: underline">Selected contact details
+	<p class="placeholder" style="font-weight: bold">placeholder</p>
+	<p class="placeholder" style="color:blue">placeholder</p>
+	<p class="placeholder" style="color:blue">placeholder</p>
+	<br/>
+	
+	<button onclick="closeWebview()">Close</button>
+	<br/><br/>
+	<button onclick="getRandomAddress()">Get random address</button>
+  	<br/><br/>
+  	<p class="randomcontact" style="color:green">Random contact</p>
+</body>
+
+<script type="text/javascript">
+
+    function showDetails(name,surname,phone,email) {
+    	var ps1 = document.getElementsByClassName("placeholder");
+        ps1[0].innerHTML = "Name :  " + name + " " + surname;
+        ps1[1].innerHTML = "Phone :  " + phone;
+        ps1[2].innerHTML = "Email :  " + email;
+    }
+    
+    function closeWebview() {
+    	Android.closeWebView();
+    }
+    
+    function getRandomAddress() {
+    	Android.fetchRandomContact();
+    }
+    
+    function showRandomContact(name) {
+    	var ps2 = document.getElementsByClassName("randomcontact");
+        ps2[0].innerHTML = "Name :  " + name;
+    }
+</script>
+</html>
